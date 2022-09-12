@@ -1,0 +1,135 @@
+// 1. header
+.header {
+    padding-top: 43px;
+    display: flex;
+    align-items: center;
+    &__logo {
+        display: inline-block;
+        margin-right: 100px;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        &--link {
+            color: $gray-dark;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+                color: $primary-color;
+                text-decoration: none;
+            }
+        }
+    }
+    &__auth {
+        margin-left: auto;
+    }
+
+    .menu-toggle{
+        margin-left: 40px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: $gray-dark;
+        color: white;
+        cursor: pointer;
+    }
+}
+// 1. header
+
+@media screen and (max-width: 1270px) {
+    .header {
+        &__logo {
+            margin-right: 0;
+        }
+        &__menu {
+            margin: 0 auto;
+        }
+        &__auth {
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .header {
+        position: fixed;
+        top:0;
+        right: 0;
+        left:0;
+        right: 0;
+        background-color: #eee;
+        padding-bottom: 20px;
+        z-index: 9999;
+        &__menu {
+            // display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 90%;
+            max-width: 300px;
+            z-index: 99999;
+            flex-direction: column;
+            background-color: rgba(white, 1);
+            border-left: 1px solid #eee;
+            display: block;
+            transform: translateX(100%);
+            transition: all 0.5s linear;
+            &--link {
+                display: block;
+                padding: 20px;
+                border-radius: 6px;
+                &:hover{
+                    color:white;
+                    background-color: $primary-color;
+                }
+            }
+            &.is-active{
+                transform: translateX(0)
+            }
+        }
+        &__auth {
+            margin-left: auto;
+        }
+        &__logo {
+            &_image {
+                max-width: 90px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        padding-top: 20px;
+
+        &__logo {
+            &_image {
+                max-width: 70px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 411px) {
+    .header {
+        padding-top: 20px;
+
+        &__logo {
+            &_image {
+                max-width: 70px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .header {
+        .menu-toggle{
+            display: none;
+        }
+        &__menu {
+            &--item:not(:first-child) {
+                margin-left: 75px;
+            }
+        }
+    }
+}

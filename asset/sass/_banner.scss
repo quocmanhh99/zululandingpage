@@ -1,0 +1,114 @@
+// 2. Banner
+.banner {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    &__info {
+        width: 35%;
+    }
+    &__heading {
+        font-size: 50px;
+        line-height: 1.4;
+        margin-bottom: 40px;
+        span {
+            display: block;
+        }
+    }
+    &__desc {
+        font-weight: 300;
+        line-height: 1.5;
+        // color: $gray--blur;
+        margin-bottom: 50px;
+    }
+    &__links {
+        .button:first-child {
+            margin-right: 40px;
+            padding-left: 25px;
+            padding-right: 20px;
+        }
+    }
+
+    // Thẻ image
+    &__image {
+        width: 65%;
+        transform: translateX(50px);
+    }
+}
+
+// 2. Banner
+
+@media screen and (max-width: 1279px) {
+    .banner {
+        &__heading {
+            font-size: 30px;
+        }
+        &__desc{
+            margin-bottom: 30px;
+        }
+
+        &__links {
+            .button {
+                padding: 10px 15px;
+            }
+            .button:first-child {
+                margin-right: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        // Thẻ image
+        &__image {
+            margin-top: 20px;
+            width: 60%;
+            transform: translateX(50px);
+        }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width:1023px){
+    .banner{
+        margin-top: 30px;
+        flex-direction: column;
+        padding-top: 30px;
+        text-align: center;
+        &__heading {
+            font-size: 30px;
+            span {
+                display: inline;
+            }
+        }
+        & > * {
+            width: 100%;
+        }
+
+        &__image {
+            width: 60%;
+            transform: none
+        }
+    }
+
+}
+
+@media screen and (max-width:767px){
+    .banner{
+        flex-direction: column;
+        padding-top: 30px;
+        text-align: center;
+        &__heading {
+            font-size: 20px;
+            span {
+                display: inline;
+            }
+        }
+        & > * {
+            width: 100%;
+        }
+
+        &__image {
+            margin-top: 30px;
+            width: 60%;
+            transform: none
+        }
+    }
+
+}

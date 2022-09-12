@@ -1,0 +1,80 @@
+// 3. work
+.work {
+    padding-top: 150px;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        // tổng khoảng trống giữa các phần tử = 2 * 70 = 140px
+        // khoảng trống của 1 phần tử: 70px
+        // 140 / 3 (tổng có 3 ô)  = 46.67 px
+    }
+
+    // Khối div có class work__item
+    &__item {
+        border: 1px solid $gray--light;
+        width: calc(33.33% - 46.67px);
+        padding: 40px 30px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        line-height: 1.6;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        &:hover{
+            background-color: transparent;
+            box-shadow: 0 0 10px rgba(black,0.4);
+            .work__more{
+                transition: all 1s ease-in-out;
+                border-color: $primary-color;
+                background-color: $primary-color;
+                color: white;
+            }
+        }
+    }
+
+    // thẻ image
+    &__image {
+        margin-bottom: 35px;
+        max-height: 115px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    // Thẻ p
+    &__desc {
+        font-weight: 300;
+        margin-bottom: 35px;
+
+        // giới hạn số dòng lại trong thẻ p
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 100%;
+        word-break: break-word;
+    }
+
+}
+
+@media screen and (max-width:1023px){
+    .work{
+        &__list{
+            display: block;
+        }
+        &__item{
+            width: 100%;
+            margin-bottom: 25px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+    }
+}

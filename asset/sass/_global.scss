@@ -1,0 +1,141 @@
+body {
+  font-family: $font;
+  color: $gray-dark;
+  font-weight: 400;
+  background-color: white;
+}
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: $font;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+
+
+
+// thẻ a có class button
+.button{
+  display: inline-block;
+  font-size: 16px;
+  color: $gray-dark;
+  padding: 10px 25px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  line-height: normal;
+  &:hover{
+    text-decoration: none;
+  }
+
+  &--primary{
+    color: white;
+    background-color: $primary-color;
+    &:hover{
+      color:black;
+      background-color: white;
+      border: 1px solid rgba($color: #000000, $alpha: 1.0);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  &--outline{
+    border: 1px solid $gray--blur;
+    color: $gray--blur;
+  }
+}
+
+// Thẻ div có class block dùng chung ở nhiều nơi , tái sử dụng lại -> cho vào global
+.block{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 85px;
+
+  &__caption{
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+
+
+    &--left{
+      padding-left: 40px;
+      margin-bottom: 30px;
+    }
+
+    &--left::after{
+      display: none;
+    }
+    &--left::before{
+      transform: none;
+    }
+
+
+    // left: bên trái
+    &::before{
+      left: 0;
+      transform: translateX(-100%) translateY(-50%);
+    }
+    // right: bên phải
+    &::after{
+      right: 0;
+      transform: translateX(100%) translateY(-50%);
+    }
+
+    &::before,&::after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: $primary-color;
+    top: 50%;
+    }
+  }
+
+  &__heading{
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 1.5;
+    span{
+      display: block;
+    }
+  }
+
+}
+
+
+.text{
+  font-weight: 300;
+  color: $gray;
+}
+
+
+@media screen and (max-width: 767px) {
+  .button{
+    padding: 10px 20px;
+  }
+  .button {
+    &__heading {
+      font-size:  35px;
+    }
+    &_caption {
+      margin-bottom: 20px;
+    }
+  }
+}
